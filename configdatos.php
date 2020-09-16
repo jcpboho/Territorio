@@ -1,6 +1,6 @@
 <?php
-	$config["sql_host"] = "bna6mhzkqzk5gfonnttz-mysql.services.clever-cloud.com";
-	$config["sql_user"] = "uzcecxirfbel0iy2";
-	$config["sql_pass"] = "uxxLoni521UgBBqlqqTI";
-	$config["db_name"] = "bna6mhzkqzk5gfonnttz";
+	$config["sql_host"] = "bdv6h6dea1rppfsab6is-mysql.services.clever-cloud.com";
+	$config["sql_user"] = "ufebzafuupkza1uq";
+	$config["sql_pass"] = "bZUzCZptLqrELH55raf1";
+	$config["db_name"] = "bdv6h6dea1rppfsab6is";
 ?>
