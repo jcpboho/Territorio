@@ -3,4 +3,5 @@
 	$config["sql_user"] = "ufebzafuupkza1uq";
 	$config["sql_pass"] = "bZUzCZptLqrELH55raf1";
 	$config["db_name"] = "bdv6h6dea1rppfsab6is";
+
 ?>
