@@ -1,5 +1,5 @@
 <?php
- 
+
 header("Access-Control-Allow-Origin: *");
 header('Access-Control-Allow-Credentials: true');
 header('Access-Control-Allow-Methods: PUT, GET, POST, DELETE, OPTIONS');
@@ -43,7 +43,7 @@ header('P3P: CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"');
 			$nombre = preg_split("#\[(.*?)\]#", $array->name, null ,PREG_SPLIT_DELIM_CAPTURE);
 		  	$queryValues .= "('".$nombre[1].$nombre[3]."', '".$nombre[1]."','".$nombre[3]."', '".$nota."'),";	  	
 		}
-		
+
 		$query = "INSERT INTO `relacion-ficha-evs`(`id`,`idalumno`, `idevs`, `nota`) VALUES ".trim($queryValues, ',').";";
 		$result = mysqli_query($connection, $query);
 
@@ -74,4 +74,4 @@ header('P3P: CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"');
 	}
 
 
-?>
+?> 
