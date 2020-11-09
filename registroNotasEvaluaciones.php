@@ -1,5 +1,5 @@
 <?php
- 
+
 header("Access-Control-Allow-Origin: *");
 header('Access-Control-Allow-Credentials: true');
 header('Access-Control-Allow-Methods: PUT, GET, POST, DELETE, OPTIONS');
@@ -25,8 +25,6 @@ header('P3P: CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"');
 			if ($nota > 69) {
 				return "A";
 			}else if ($nota == "SC") {
-				return $nota;
-			}else if ($nota == "RV") {
 				return $nota;
 			}else if ($nota < 70) {
 				return "D";
@@ -62,7 +60,7 @@ header('P3P: CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"');
 		}
 
 		$querySelect=querySelect(trim($queryException, 'and'),$connection);
-		
+
 		while($resultSelect = mysqli_fetch_assoc($querySelect)) {
 
 			$alumno = $resultSelect["id"];
@@ -88,7 +86,7 @@ header('P3P: CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"');
 		}
 
 		$querySelect=querySelect(trim($queryException, 'and'),$connection);
-		
+
 
 		while($resultSelect  = mysqli_fetch_assoc($querySelect)) {
 
@@ -113,4 +111,4 @@ header('P3P: CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"');
 	}
 
 
-?>
+?> 
