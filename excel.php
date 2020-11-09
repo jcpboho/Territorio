@@ -82,6 +82,10 @@
 			       	?>
 						<td style="background-color: #00B0F0"><?= $data["nota"];?></td>	
 			        <?php 
+			        }else if ($data["nota"] == "RV") {
+			       	?>
+						<td style="background-color: #FFBE33"><?= $data["nota"];?></td>	
+			        <?php 
 			        }else if ($data["nota"] == "D" || $data["nota"] < 70) {
 			       	?>
 						<td style="background-color: #FF3300"><?= $data["nota"];?></td>	
@@ -104,6 +108,10 @@
 			        }else if ($data["nota"] == "SN") {
 			       	?>
 						<td style="background-color: #00B0F0"><?= $data["nota"];?></td>	
+			        <?php 
+			        }else if ($data["nota"] == "RV") {
+			       	?>
+						<td style="background-color: #FFBE33"><?= $data["nota"];?></td>	
 			        <?php 
 			        }else if ($data["nota"] == "D" || $data["nota"] < 70) {
 			       	?>
@@ -129,6 +137,10 @@
 			        }else if ($data["nota"] == "SN") {
 			       	?>
 						<td style="background-color: #00B0F0"><?= $data["nota"];?></td>	
+			        <?php 
+			        }else if ($data["nota"] == "RV") {
+			       	?>
+						<td style="background-color: #FFBE33"><?= $data["nota"];?></td>	
 			        <?php 
 			        }else if ($data["nota"] == "D" || $data["nota"] < 70) {
 			       	?>
