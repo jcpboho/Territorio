@@ -27,6 +27,8 @@ header('P3P: CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"');
 				return $nota;
 			}else if ($nota == "SN") {
 				return $nota;
+			}else if ($nota == "RV") {
+				return $nota;
 			}else if ($nota < 70) {
 				return "D";
 			}
