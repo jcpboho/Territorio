@@ -38,6 +38,7 @@ header('P3P: CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"');
 		$select="SELECT id FROM alumnos WHERE cc='$cc'";
 		$result = mysqli_query($connection, $select);
 		$result =mysqli_fetch_assoc($result);
+		mysqli_close();
 		return $result["id"];
 	}
 	function queryInsert($idalumno,$idevs,$nota){
