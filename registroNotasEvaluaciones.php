@@ -1,5 +1,5 @@
 <?php
-
+ 
 header("Access-Control-Allow-Origin: *");
 header('Access-Control-Allow-Credentials: true');
 header('Access-Control-Allow-Methods: PUT, GET, POST, DELETE, OPTIONS');
@@ -26,6 +26,8 @@ header('P3P: CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"');
 				return "A";
 			}else if ($nota == "SC") {
 				return $nota;
+			}else if ($nota == "RV") {
+				return $nota;
 			}else if ($nota < 70) {
 				return "D";
 			}
@@ -37,32 +39,33 @@ header('P3P: CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"');
 	function querySelect($exception,$connection){
 		$select="SELECT id FROM alumnos WHERE ".$exception." and ficha = ".$_POST['ficha'];
 		$result = mysqli_query($connection, $select);
-		mysqli_close($connection);
 		return $result;
 	}	
 	function querySelectExist($id,$connection){
 		$select="SELECT count(*) count FROM alumnos WHERE id='$id'";
 		$result = mysqli_query($connection, $select);
 		$result =mysqli_fetch_assoc($result);
-		mysqli_close($connection);
 		return $result["count"];
 	}
 
 	if ($_POST["proceso"] == "insertar") {
+		if (empty($todo)) {
+			$queryException = " id != -1 and";	
+		}else{
+			foreach($todo as $array) {
 
-		foreach($todo as $array) {
-
-			$nota = notas($array->value);
-			$alumno = $array->alumno;
-			$evs = $array->evs;
-			if (querySelectExist($alumno,$connection)!=0) {
-			  	$queryValues .= "('".$alumno.$evs."', '".$alumno."','".$evs."', '".$nota."'),";	  
-			  	$queryException .= " id != ".$alumno." and";	
-			}  	
+				$nota = notas($array->value);
+				$alumno = $array->alumno;
+				$evs = $array->evs;
+				if (querySelectExist($alumno,$connection)!=0) {
+				  	$queryValues .= "('".$alumno.$evs."', '".$alumno."','".$evs."', '".$nota."'),";	  
+				  	$queryException .= " id != ".$alumno." and";	
+				}  	
+			}
 		}
 
 		$querySelect=querySelect(trim($queryException, 'and'),$connection);
-
+		
 		while($resultSelect = mysqli_fetch_assoc($querySelect)) {
 
 			$alumno = $resultSelect["id"];
@@ -88,7 +91,7 @@ header('P3P: CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"');
 		}
 
 		$querySelect=querySelect(trim($queryException, 'and'),$connection);
-
+		
 
 		while($resultSelect  = mysqli_fetch_assoc($querySelect)) {
 
@@ -113,4 +116,4 @@ header('P3P: CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"');
 	}
 
 
-?> 
+?>
