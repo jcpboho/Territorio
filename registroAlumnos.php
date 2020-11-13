@@ -15,8 +15,9 @@ header('P3P: CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"');
   $todo = json_decode($resultados, true);
 
 
-  $ficha = preg_split("#\_([A-Z].*?)(.*?)\_#", $todo["periodo"]["id_externo"], null ,PREG_SPLIT_DELIM_CAPTURE);
-  $ficha = $ficha[2];
+  //$ficha = preg_split("#\_([A-Z].*?)(.*?)\_#", $todo["periodo"]["id_externo"], null ,PREG_SPLIT_DELIM_CAPTURE);
+  //$ficha = $ficha[2];
+  $ficha = $_POST['ficha'];
   
   $array = $todo["alumnos"];
   //print_r($_POST);
@@ -39,9 +40,9 @@ header('P3P: CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"');
 
   $result = mysqli_query($connection, $query);
 
+      $connection->close();
   if ($result) {
     echo json_encode("Aprendices registrados");
-    $connection->close();
     //echo $id.", $matricula, $nombre, $ficha";
   }else{
     echo json_encode($connection->error);
