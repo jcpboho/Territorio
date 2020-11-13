@@ -37,12 +37,14 @@ header('P3P: CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"');
 	function querySelect($exception,$connection){
 		$select="SELECT id FROM alumnos WHERE ".$exception." and ficha = ".$_POST['ficha'];
 		$result = mysqli_query($connection, $select);
+		mysqli_close();
 		return $result;
 	}	
 	function querySelectExist($id,$connection){
 		$select="SELECT count(*) count FROM alumnos WHERE id='$id'";
 		$result = mysqli_query($connection, $select);
 		$result =mysqli_fetch_assoc($result);
+		mysqli_close();
 		return $result["count"];
 	}
 
