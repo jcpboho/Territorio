@@ -12,8 +12,9 @@ header('P3P: CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"');
 
   $resultados = file_get_contents('php://input');
 
-  $todo = json_decode($resultados, true);
+ // $todo = json_decode($resultados, true);
 
+  $todo = json_decode($_REQUEST["param"], false, 512, JSON_UNESCAPED_UNICODE);
 
   //$ficha = preg_split("#\_([A-Z].*?)(.*?)\_#", $todo["periodo"]["id_externo"], null ,PREG_SPLIT_DELIM_CAPTURE);
   //$ficha = $ficha[2];
