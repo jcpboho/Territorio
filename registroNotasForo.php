@@ -75,10 +75,10 @@ header('P3P: CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"');
 
 	}
 
+    	$connection->close();
 	header('Content-type: application/json');
 	if ($result) {
 		echo json_encode("Notas inscritas o actualizadas correctamente.");
-    	$connection->close();
 	}else{
 		echo json_encode($connection->error);
 		//echo "error registroNotasSimple.php";
