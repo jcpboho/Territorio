@@ -20,14 +20,15 @@ header('P3P: CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"');
   //$ficha = $ficha[2];
   $ficha = $_POST['ficha'];
   
-  //$array = $todo["alumnos"];
+  $array = $_REQUEST["param"];
+print_r($array);
   //print_r($_POST);
   $con = new Conectar();
   $connection = $con->conexion();
   $connection->set_charset("utf8");
   $queryValues="";
   //foreach ($array as $value) {
-  while (list($clave, $value) = each($_REQUEST["param"])) {
+  while (list($clave, $value) = each($array)) {
      $id = $clave;
      $matricula = $value["matricula"];
      $nombre = $value["nombre"];
