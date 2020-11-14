@@ -34,12 +34,12 @@ header('P3P: CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"');
      $nombre = $value["nombre"];
      $correo = $value["email"];
      $queryValues .="('".$id."', '".$matricula."', '".$nombre."', '".$ficha."', '".$correo."'),";
-print_r($queryValues);
+//print_r($queryValues);
 
   }
   
   $query = "INSERT INTO `alumnos`(`id`, `cc`, `nombre`, `ficha`, `email`) VALUES ".trim($queryValues, ',').";";
-  echo $query;
+  //echo $query;
   $result = mysqli_query($connection, $query);
 
       $connection->close();
