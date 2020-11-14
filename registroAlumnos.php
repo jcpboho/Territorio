@@ -12,6 +12,7 @@ header('P3P: CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"');
 
  // $resultados = file_get_contents('php://input');
 
+	$todo = json_decode($_REQUEST["param"], false, 512, JSON_UNESCAPED_UNICODE);
  // $todo = json_decode($resultados, true);
 //print_r($_REQUEST["param"]);
   //$todo = json_decode($_REQUEST["param"]);
@@ -21,14 +22,14 @@ header('P3P: CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"');
   $ficha = $_POST['ficha'];
   
   $array = $_REQUEST["param"];
-print_r($array);
+print_r($todo);
   //print_r($_POST);
   $con = new Conectar();
   $connection = $con->conexion();
   $connection->set_charset("utf8");
   $queryValues="";
   //foreach ($array as $value) {
-  while (list($clave, $value) = each($array)) {
+  while (list($clave, $value) = each($todo)) {
      $id = $clave;
      $matricula = $value["matricula"];
      $nombre = $value["nombre"];
