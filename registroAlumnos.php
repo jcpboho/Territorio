@@ -29,12 +29,12 @@ header('P3P: CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"');
   $queryValues="";
   //foreach ($array as $value) {
   while (list($clave, $value) = each($todo)) {
-print_r($todo);
      $id = $clave;
      $matricula = $value["matricula"];
      $nombre = $value["nombre"];
      $correo = $value["email"];
      $queryValues .="('".$id."', '".$matricula."', '".$nombre."', '".$ficha."', '".$correo."'),";
+print_r($queryValues);
 
   }
   
